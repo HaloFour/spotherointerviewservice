@@ -2,6 +2,7 @@ package com.spothero;
 
 import com.spothero.config.JacksonServerConfig;
 import com.spothero.config.ServiceBinder;
+import com.spothero.config.StatisticsRequestFilter;
 import com.spothero.config.exception.ApiErrorExceptionMapper;
 import com.spothero.config.exception.DefaultExceptionMapper;
 import org.glassfish.grizzly.http.server.HttpServer;
@@ -44,6 +45,7 @@ public class Program {
         config.register(new ServiceBinder());
         config.register(ApiErrorExceptionMapper.class);
         config.register(DefaultExceptionMapper.class);
+        config.register(StatisticsRequestFilter.class);
         return config;
     }
 }
